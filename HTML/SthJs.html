@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/CSS/SthJs.css">
+	<link rel="shortcut icon" type="image/png" sizes="192x192" href="/Resource/kinhlup.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/f30e9aa4c2.js" crossorigin="anonymous"></script>
+	<title>Sth about Js</title>
+
+	<div class="navbar">
+		<a href="/index.html">Index</a>
+		<a href="/HTML/FavGameMap.html">FGM</a>
+		<a href="/HTML/main.html">Main</a>
+	</div>
+</head>
+
+
+<body>
+
+<div class="normal">
+	<h4>Date and Time</h4>
+	<button type="button" class="btn btn-info" onclick="document.getElementById('date-and-time').innerHTML= 'Click again to update real-time'; this.innerHTML = Date()">Click Here</button>
+	<p id="date-and-time"></p>
+</div>
+
+<!--The Buttons Trial-->
+<div class="normal">
+	<h4>The Buttons Trial</h4>
+	<p>Every buttons here have its own way to trigger it, try to trigger all :) </p>
+
+	<div class="ctn-event-btns">
+		<div class="item1">
+			<button type="button" class="btn btn-info" onmouseenter="this.innerHTML='He is'" onmouseleave="this.innerHTML='Secret revealed!!!'">Secret</button>
+		</div>
+
+		<div class="item1">
+			<button type="button" class="btn btn-info" ondblclick="this.innerHTML='Secret revealed!!!'">Secret</button>
+		</div>
+
+		<div class="item1">
+			<button type="button" class="btn btn-info" oncontextmenu="this.innerHTML='Secret revealed!!!'">Secret</button>
+		</div>
+		
+		<div class="item1">
+			<button type="button" class="btn btn-info" onmousedown="if(event.ctrlKey){this.innerHTML='Secret revealed!!!'}">Secret</button>
+		</div>
+
+		<div class="item1">
+			<button type="button" class="btn btn-info" onmousedown="this.innerHTML='Lying'" onmouseup="this.innerHTML = 'Secret revealed!!!'">Secret</button>
+		</div>
+
+		<div class="item1">
+			<button type="button" class="btn btn-info" onmousedown="if(event.altKey){this.innerHTML='Secret revealed!!!'}">Secret</button>
+		</div>
+	</div>
+</div>
+
+<!--The Tresures Trial-->
+<div class="normal">
+	<h4>The Tresures Trial</h4>
+	<p style="text-align: left; padding: 0 5px 0 5px;"><u>Rule:</u><br>1. Play on PC/Laptop<br>2. Website zoom: 100%<br>3. Fullscreen<br>4. Click on where you think is the treasure until window alert to trigger tresure. (normally, 5 click to trigger)<br>5. To get bigger pic, right-click and choose "Open picture in new tag"<br><strong>Coodinate tool: </strong><button onclick="toggle()" id='switch'>OFF</button> (When ON, you <strong>can't</strong> trigger tresures)</p>
+
+	<div class="tresure-field">
+		<div class="tresure tresure1" onclick="tresureZone(); if(clickCounter==5){this.remove();clickCounter=0;alert('Found it!');}"></div>
+		<div class="tresure tresure2" onclick="tresureZone(); if(clickCounter==5){this.remove();clickCounter=0;alert('Found it!');}"></div>
+		<img src="/Resource/WorldMap.jpg" onmousemove = "showCoods(event)" onmouseout="deleteCoods(event)"> 
+		<span id="coodi"></span>
+	</div>
+	<p style="font-size: 13px; text-align: left;">Picture Cre: Google Image</p>
+</div>
+
+<!--The Hidden Objects Trial-->
+<div class="normal">
+	<h4>The Hidden Objects Trial</h4>
+	<p style="text-align: left;">Here is list of items you need to find (double click):</p>
+	<p style="word-spacing: 70px;">
+		<!--Template: <strong id=""> </strong>-->
+		<strong id="plane">Plane </strong>
+		<strong id="coffee">Coffee </strong>
+		<strong id="bird">Bird </strong>
+		<strong id="rake">Rake </strong>
+		<strong id="puppy">Puppy </strong>
+	</p>
+	<div class="HOT">
+		<img src="/Resource/HiddenOb.jpg">
+		<!--Template: <div style="width: px;height: px;top: %;left: %;" ondblclick="clearWord(this,'#')"></div>-->
+		<div style="width: 50px;height: 35px;top: 15%;left: 80%;" ondblclick="clearWord(this,'#plane')"></div>
+		<div style="width: 35px;height: 35px;top: 35%;left: 67.45%;" ondblclick="clearWord(this,'#coffee')"></div>
+		<div style="width: 60px;height: 35px;top: 92%;left: 13.3%;" ondblclick="clearWord(this,'#rake')"></div>
+		<div style="width: 25px;height: 35px;top: 68%;left: 71.7%;" ondblclick="clearWord(this,'#puppy')"></div>
+		<div style="width: 75px;height: 75px;top: 18.5%;left: 17.5%;" ondblclick="clearWord(this,'#bird')"></div>
+	</div>
+	<p style="font-size: 13px; text-align: left;">Picture Cre: June's Journey (HO Game)</p>
+</div>
+
+<!--The Maze Trial-->
+<div class="normal">
+	<h4>The Maze Trial</h4>
+	<p style="text-align: left;"><strong>Pro tip:</strong> Copy this pic to somewhere you can draw<br><strong>NOTE: TYPE ANSWER IN CAPSLOCK</strong></p>
+	<img src="/Resource/MazeComplete.png" style="width:100%;">
+	<input type="textbox" id="maze" placeholder="ANSWER">
+	<br>
+	<button type="button" class="btn btn-danger" id="mazeBtn">Submit</button>
+</div>
+
+<!--Secret-->
+<div class="secret-ctn">
+	<div class="secret-items" style="position: relative;">
+		<img src="/Resource/CloseDoor.png" id="passImg">
+		<img src="" id="secretImg">
+		<input type="textbox" id="secretDoor" placeholder="Password">
+		<br>
+		<button type="button" class="btn btn-danger" onclick="submitPass()" >Submit</button>
+	</div>
+
+	<div class="secret-items" style="border: none;">
+		<div class="color-padlock">
+			<h6>Click to change color</h6>
+			<div style="display: flex; justify-content: space-between;">
+				<button onclick="changeColor(this)" id="btn1" class="btn" style="height: 45px; width: 45px; background-color: #118ab2;"></button>
+				<button onclick="changeColor(this)" id="btn2" class="btn" style="height: 45px; width: 45px; background-color: #118ab2;"></button>
+				<button onclick="changeColor(this)" id="btn3" class="btn" style="height: 45px; width: 45px; background-color: #118ab2;"></button>
+				<button onclick="changeColor(this)" id="btn4" class="btn" style="height: 45px; width: 45px; background-color: #118ab2;"></button>
+			</div>
+			<p id="colorPadlockPara" style="font-size: 20px; margin: 0px;"></p>
+		</div>
+		<div class="secret-safe" style="border: solid 2px; padding: 10px; border-radius: 10px; ">
+			<p id="pPass"></p>
+			<p id="safeSecret" style="font-size: 15px;"></p>
+			<div class="safeNums">
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">1</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">2</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">3</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">4</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">5</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">6</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">7</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">8</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">9</button>
+				<button onclick="safeClear()" type="button" class="btn btn-warning">C</button>
+				<button onclick="var num = this.innerHTML; inputNum(num)" type="button" class="btn btn-warning">0</button>
+				<button onclick="safeEnter()" type="button" class="btn btn-warning">E</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--
+<div class="normal">
+	<h4>The Detective Trial</h4>
+	<div class="gridPanel">
+		<button id="a1"></button>
+		<button id="a2"></button>
+		<button id="a3"></button>
+		<button id="a4"></button>
+		<button id="a5"></button>
+		<button id="a6"></button>
+		<button id="a7"></button>
+		<button id="a8"></button>
+		<button id="a9"></button>
+		<button id="a10"></button>
+		<button id="a11"></button>
+		<button id="a12"></button>
+		<button id="a13"></button>
+		<button id="a14"></button>
+		<button id="a15"></button>
+		<button id="a16"></button>
+		<button id="a17"></button>
+		<button id="a18"></button>
+		<button id="a19"></button>
+		<button id="a20"></button>
+		<button id="a21"></button>
+		<button id="a22"></button>
+		<button id="a23"></button>
+		<button id="a24"></button>
+		<button id="a25"></button>
+	</div>
+</div>
+-->
+
+<!--Chat Zone-->
+<button id="messPopup" onmousedown="$(this).css('box-shadow','none')" onmouseup="$(this).css('box-shadow','0px 0px 14px 0px #000')" onclick="$('.chatBox').show()"><i class="fas fa-comment-dots" style="color: #fffffc; font-size: 33px;"></i></button>
+<div class="chatBox">
+	<!--Tab Button-->
+	<div class="profile">
+		<button class="profileBtn ioka" onclick="openName(event, '#ioka')"><img src="/Resource/Ioka.png" class="profileImg"></button>
+		<button class="profileBtn loka" onclick="openName(event, '#loka')"><img src="/Resource/Loka.png" class="profileImg"></button>
+	</div>
+	
+	<div id="ioka" class="messCtn">
+		<div class="profNav">
+			<img class="navPic" src="/Resource/Ioka.png">
+			<p><strong>loka</strong></p>
+			<button onclick="$('.chatBox').hide()"><i class="fas fa-times"></i></button>
+		</div>
+
+		<div class="messages"></div>
+		
+		<div class="chating">
+			<button class="a1">Uh, đúng rồi</button>
+			<button class="a2">Uh....chưa?</button>
+			<button class="a3">Tôi có 1 người gửi trên MXH.</button>
+			<button class="a4">Cảm ơn, mà bài test này có mình tôi thôi hả?</button>
+			<button class="a5">Tôi được 1 người nào đó gửi bài test này với tiêu đề "bài test não, bạn đỉnh đến đâu?". Điều đó đồng nghĩa với việc người gửi trước đó phải test rồi chứ nhỉ?</button>
+		</div>
+	</div>
+
+	<div id="loka" class="messCtn">
+		<div class="profNav">
+			<img class="navPic" src="/Resource/Loka.png">
+			<p class="profName"><strong>loka</strong></p>
+			<button onclick="$('.chatBox').hide()"><i class="fas fa-times"></i></button>
+		</div>
+
+		<div class="messages"></div>
+
+		<div class="chating">
+			
+		</div>
+	</div>
+</div>
+
+
+<script src="/JS/SthJs.js"></script>
+</body>
+</html>
+
+<!--
+	Developer Note and To-do:
+	1. Add more items to find in Hidden Object Trial
+-->

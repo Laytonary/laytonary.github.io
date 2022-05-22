@@ -1,0 +1,58 @@
+.navbar {
+  overflow: hidden;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 0 15px 0 15px;
+  margin: 0 20px 0 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+  border-radius: 10px;
+}
+
+.imgindex {
+  background: rgb(231,101,210);
+  background: linear-gradient(111deg, rgba(231,101,210,0.7950367647058824) 20%, rgba(230,229,88,1) 76%);
+  padding: 7px;
+  border-radius: 50px;
+  text-align: center;
+  margin: 50px;
+  height: 403px;
+  width: 236px;
+}
+body {
+  margin-top: 70px;
+	text-align: center;
+	background: rgb(10,240,18);
+  background: linear-gradient(97deg, rgba(10,240,18,0.7950367647058824) 20%, rgba(0,255,176,1) 76%);
+}
+
+.joke1{
+  text-align: center;
+  margin: 150px 100px 0 100px;
+}
+
+.hof{
+  height: 200px;
+  width: 200px;
+  margin: 0 50px 0 50px;
+  border-radius: 200px;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(16, 80, 255);
+}

@@ -1,0 +1,89 @@
+.navbar {
+  overflow: hidden;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 0 15px 0 15px;
+  margin: 0 20px 0 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+  border-radius: 10px;
+}
+
+body{
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  background-attachment: fixed;
+  background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+  background-size: cover;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.container .in4{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: #f0efeb;
+  padding: 10px;
+  margin: 15px;
+  border: solid 5px;
+  border-radius: 15px;
+  max-width: 1500px;
+}
+
+.container .in4 .imgBox1{
+  margin: 10px;
+  max-width: 500px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.container .in4 .imgBox1 img{
+  margin: 0 10px 10px 0;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.container .in4 .para{
+  max-width: 1000px;
+  min-width: 400px;
+}
+
+@media (max-width: 1201px){
+  .container{
+    flex-direction: column;
+  }
+  .container .in4{
+    flex-direction: column;
+    max-width: 700px;
+  }
+  .container .in4 .imgBox1{
+    max-width: 700px;
+  }
+}

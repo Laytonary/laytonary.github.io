@@ -1,0 +1,130 @@
+body{
+    display: flex;
+    overflow: hidden;
+}
+
+/*Chat Bubble*/
+.profile{
+    width: 75px;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    border-right: solid 1px gray;
+    background-color: white;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    z-index: 1000;
+}
+.profile::-webkit-scrollbar {
+    display: none;
+}
+.profileBtn{
+    transition: 0.2s;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+.profileBtn:hover{
+    background-color: lightslategray;
+}
+.profileImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+/*Nav bar*/
+.profNav{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 75px;
+    height: 70px;
+    width: 100%;
+    padding: 6px;
+}
+.navPic{
+    border-radius: 100%;
+    height: 100%;
+}
+.profName{
+    font-size: 30px;
+    padding-top: 6px;
+    margin-left: 10px;
+}
+
+/*Chat bar*/
+.chating{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    bottom: 0;
+    left: 75px;
+    height: 65px;
+    width: 100%;
+    padding: 6px 130px 6px 50px;
+}
+
+/*Messages Box*/
+/*.messagesCtn{
+    position: fixed;
+    overflow-y: scroll;
+    background-color: lightskyblue;
+    width: 100%;
+    top: 70px;
+    bottom: 65px;
+    padding: 15px 15px 15px 90px;
+    border: solid 1px;
+}
+.messagesCtn::-webkit-scrollbar {
+    display: none;
+}*/
+
+/*Messages*/
+.messages{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    overflow-y: scroll;
+    background-color: lightskyblue;
+    width: 100%;
+    top: 70px;
+    bottom: 65px;
+    padding: 15px 15px 15px 90px;
+    border: solid 1px;
+}
+.messages div{
+    display: block;
+    border-top: solid 1px;
+    padding: 10px;
+}
+.messages div::after{
+    clear: both;
+    display: table;
+}
+.right{
+    justify-content: flex-end;
+    float: right;
+    right: 0;
+    text-align: right;
+    padding-left: 35%;
+}
+.left{
+    float: left;
+    padding-right: 35%;
+}
+
+.right img{
+    float: right;
+    max-width: 60px;
+    width: 100%;
+    border-radius: 50%;
+}
+.left img{
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    border-radius: 50%;
+}
